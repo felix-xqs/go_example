@@ -1,0 +1,37 @@
+app:
+  name: "go_example"   #应用名称
+  port: 8080    #服务器端口号
+
+logger:
+  fileConfig:
+    logFilePath: "./log/" #文件输出路径
+    maxSize: 1024  #文件最大尺寸,以MB为单位，超过即创建第二个文件
+    maxBackups: 2  #最大备份文件数
+    maxAge: 7  #保存时间
+    compress: true #是否压缩
+    console: true #是否是需要控制台输出
+    levelString: debug #日志输出等级，debug,info,warn,error,panic,fatal
+
+srvices: #服务地址，ip均可
+  payCenter: "user_pay"
+  pushCenter: "push_center"
+
+redis:
+  rd_test:
+    addr: "127.0.0.1:6379"
+    auth: ""
+    db: 1
+  re_test:
+    addr: "127.0.0.1:6379"
+    auth: ""
+    db: 3
+
+mongo:
+  mg_test_0:
+    dsn: "mongodb://127.0.0.1:27017?minPoolSize=10&maxIdleTimeMS=10000"
+  mg_test_1:
+    dsn: "mongodb://127.0.0.1:27017?minPoolSize=10&maxIdleTimeMS=10000"
+  mg_test_2:
+    dsn: "mongodb://127.0.0.1:27017?minPoolSize=10&maxIdleTimeMS=10000"
+  xmg_test_3:
+    dsn: "mongodb://127.0.0.1:27017?minPoolSize=10&maxIdleTimeMS=10000"
