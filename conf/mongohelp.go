@@ -1,15 +1,16 @@
 package conf
 
 import (
-	"github.com/globalsign/mgo"
+	"github.com/go-mgo/mgo"
 	"log"
 )
 
 type YMongoMap map[string]*mgo.Session
 
-type MongoConf struct{
-	Dsn string  `mapstructure:"dsn"`
+type MongoConf struct {
+	Dsn string `mapstructure:"dsn"`
 }
+
 func GetMongoMap(confMap map[string]MongoConf) YMongoMap {
 	xMongoMap := YMongoMap{}
 	for db, m := range confMap {
